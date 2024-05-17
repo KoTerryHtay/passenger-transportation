@@ -1,12 +1,12 @@
 import Link from "next/link";
 import data from "../../../data/data.json";
 import RouteButton from "@/components/route-button";
+import { getClientDate } from "@/components/utils";
 
 export default function GatesPage() {
-  const time = new Date().getHours();
+  // const time = new Date().getHours();
+  const time = getClientDate();
   // console.log("time >>>", time);
-
-  if (!time) return null;
 
   return (
     <div className="py-5">
