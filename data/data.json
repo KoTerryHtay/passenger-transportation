@@ -1,0 +1,126 @@
+{
+  "Owners": [
+    {
+      "OwnerId": "owner_01",
+      "OwnerName": "Owner 1",
+      "OwnerPh": 9123123123
+    },
+    {
+      "OwnerId": "owner_02",
+      "OwnerName": "Owner 2",
+      "OwnerPh": 9234234234
+    }
+  ],
+  "Gates": [
+    {
+      "gateId": "gate_01",
+      "gateName": "Gate A",
+      "gatePh": 9123123123,
+      "gateOpenTime": 6,
+      "gateCloseTime": 18,
+      "location": {
+        "lat": 21.356585,
+        "lng": 96.155042
+      }
+    },
+    {
+      "gateId": "gate_02",
+      "gateName": "Gate B",
+      "gatePh": 123123,
+      "gateOpenTime": 6,
+      "gateCloseTime": 18,
+      "location": {
+        "lat": 21.369482,
+        "lng": 96.17033
+      }
+    },
+    {
+      "gateId": "gate_03",
+      "gateName": "Gate C",
+      "gatePh": 123123,
+      "gateOpenTime": 6,
+      "gateCloseTime": 18,
+      "location": {
+        "lat": 21.967086,
+        "lng": 96.076811
+      }
+    },
+    {
+      "gateId": "gate_04",
+      "gateName": "Gate D",
+      "gatePh": 123123,
+      "gateOpenTime": 6,
+      "gateCloseTime": 18,
+      "location": {
+        "lat": 21.961066,
+        "lng": 96.076436
+      }
+    }
+  ],
+  "Cars": [
+    {
+      "carId": "car_01",
+      "carName": "Car A",
+      "driverName": "Driver A",
+      "driverPh": 9456456456,
+      "assistantName": "Assistant A",
+      "gate1Id": "gate_01",
+      "gate2Id": "gate_03",
+      "ownerId": "owner_01",
+      "time1": 5,
+      "time2": 13,
+      "location": {
+        "lat": 21.381534,
+        "lng": 96.174627
+      }
+    },
+    {
+      "carId": "car_02",
+      "carName": "Car B",
+      "driverName": "Driver B",
+      "driverPh": 9345345345,
+      "assistantName": "Assistant B",
+      "gate1Id": "gate_01",
+      "gate2Id": "gate_03",
+      "ownerId": "owner_02",
+      "time1": 6,
+      "time2": 14,
+      "location": {
+        "lat": 21.586608,
+        "lng": 96.145676
+      }
+    },
+    {
+      "carId": "car_03",
+      "carName": "Car C",
+      "driverName": "Driver C",
+      "driverPh": 9234234234,
+      "assistantName": "Assistant C",
+      "gate1Id": "gate_02",
+      "gate2Id": "gate_04",
+      "ownerId": "owner_01",
+      "time1": 5,
+      "time2": 13,
+      "location": {
+        "lat": 21.854152,
+        "lng": 96.085909
+      }
+    },
+    {
+      "carId": "car04",
+      "carName": "Car D",
+      "driverName": "Driver D",
+      "driverPh": 912123123,
+      "assistantName": "Assistant D",
+      "gate1Id": "gate_02",
+      "gate2Id": "gate_04",
+      "ownerId": "owner_02",
+      "time1": 6,
+      "time2": 14,
+      "location": {
+        "lat": 21.869261,
+        "lng": 96.089886
+      }
+    }
+  ]
+}
