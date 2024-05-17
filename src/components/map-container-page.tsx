@@ -19,7 +19,7 @@ export default function MapContainerPage() {
 
   // console.log(">>> ", searchLat, searchLng);
   // console.log(">>> ", !!hasSearchLatLng);
-  console.log("time >>>", time);
+  // console.log("time >>>", time);
 
   return (
     <div className="relative z-0">

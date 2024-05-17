@@ -6,6 +6,8 @@ export default function GatesPage() {
   const time = new Date().getHours();
   // console.log("time >>>", time);
 
+  if (!time) return null;
+
   return (
     <div className="py-5">
       <div className="flex items-center">
