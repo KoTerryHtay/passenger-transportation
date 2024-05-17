@@ -1,3 +1,5 @@
+"use client";
+
 import { notFound } from "next/navigation";
 import data from "../../../../data/data.json";
 import Link from "next/link";
