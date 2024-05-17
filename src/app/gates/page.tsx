@@ -26,7 +26,7 @@ export default function GatesPage() {
             id={gate.gateId}
             key={gate.gateId}
             location={[gate.location.lat, gate.location.lng]}
-            text={`${gate.gateName} (${
+            text={`${gate.gateName} ${time} (${
               gate.gateOpenTime <= time && gate.gateCloseTime > time
                 ? "open"
                 : "close"

@@ -25,7 +25,7 @@ export default function CarsPage() {
             id={car.carId}
             key={car.carId}
             location={[car.location.lat, car.location.lng]}
-            text={`${car.carName} ${
+            text={`${car.carName} ${time} ${
               car.time2 <= time ? "(from mdy)" : "(to mdy)"
             }`}
           />

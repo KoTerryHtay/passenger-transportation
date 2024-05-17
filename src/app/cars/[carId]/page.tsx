@@ -58,7 +58,7 @@ export default function CarDetailPage({ params }: { params: Params }) {
               id={gate.gateId}
               location={[gate.location.lat, gate.location.lng]}
               option="gates"
-              text={`${gate.gateName} (${
+              text={`${gate.gateName} ${time} (${
                 gate.gateOpenTime <= time && gate.gateCloseTime > time
                   ? "open"
                   : "close"
