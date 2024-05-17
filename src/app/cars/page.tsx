@@ -7,6 +7,8 @@ import RouteButton from "@/components/route-button";
 export default function CarsPage() {
   const time = new Date().getHours();
 
+  // console.log("time >>>", time);
+
   return (
     <div className="py-5">
       <div className="flex items-center">

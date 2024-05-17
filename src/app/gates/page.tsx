@@ -4,7 +4,7 @@ import RouteButton from "@/components/route-button";
 
 export default function GatesPage() {
   const time = new Date().getHours();
-  // console.log(time);
+  // console.log("time >>>", time);
 
   return (
     <div className="py-5">
