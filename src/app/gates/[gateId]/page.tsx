@@ -2,13 +2,14 @@ import { notFound } from "next/navigation";
 import data from "../../../../data/data.json";
 import Link from "next/link";
 import RouteButton from "@/components/route-button";
+import { getClientTime } from "@/components/utils";
 
 type Params = {
   gateId: string;
 };
 
 export default function GateDetailPage({ params }: { params: Params }) {
-  const time = new Date().getHours();
+  const [mmHour, mmMinute] = getClientTime();
 
   const gate = data.Gates.find((gates) => gates?.gateId === params.gateId);
 
@@ -34,8 +35,8 @@ export default function GateDetailPage({ params }: { params: Params }) {
       <div className="text-left text-white font-semibold space-y-3">
         <div>
           Name :
-          {` ${gate.gateName} (${
-            gate.gateOpenTime <= time && gate.gateCloseTime > time
+          {` ${gate.gateName} ${mmHour} (${
+            gate.gateOpenTime <= mmHour && gate.gateCloseTime > mmHour
               ? " Open now "
               : " Close now "
           })`}
@@ -58,8 +59,8 @@ export default function GateDetailPage({ params }: { params: Params }) {
               id={car.carId}
               location={[car.location.lat, car.location.lng]}
               option="cars"
-              text={`${car.carName} ${
-                car.time2 <= time ? "(from mdy)" : "(to mdy)"
+              text={`${car.carName} ${mmHour} ${mmMinute} ${
+                car.time2 <= mmHour ? "(from mdy)" : "(to mdy)"
               }`}
             />
           ))}

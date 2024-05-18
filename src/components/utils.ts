@@ -1,20 +1,13 @@
-// "use client";
+export function getClientTime() {
+  const mmTime = new Intl.DateTimeFormat("en", {
+    timeStyle: "short",
+    hour12: false,
+    timeZone: "Asia/Yangon",
+  }).format(new Date());
 
-export function name(
-  gateName: string,
-  gateOpenTime: number,
-  gateCloseTime: number
-) {
-  const time = new Date().getHours();
+  const [mmHour, mmMinute] = mmTime.split(":");
 
-  return `${gateName} (${
-    gateOpenTime <= time && gateCloseTime > time ? "open" : "close"
-  })`;
-}
+  // console.log("getClientDate >>>", mmTime);
 
-export function getClientDate() {
-  const time = new Date().getHours();
-  console.log("getClientDate >>>", time);
-
-  return time;
+  return [+mmHour, +mmMinute];
 }

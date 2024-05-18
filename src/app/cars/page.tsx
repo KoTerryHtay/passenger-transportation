@@ -1,14 +1,12 @@
-"use client";
 export const dynamic = "force-dynamic";
 
 import Link from "next/link";
 import data from "../../../data/data.json";
 import RouteButton from "@/components/route-button";
+import { getClientTime } from "@/components/utils";
 
 export default function CarsPage() {
-  const time = new Date().getHours();
-
-  // console.log("time >>>", time);
+  const [mmHour, mmMinute] = getClientTime();
 
   return (
     <div className="py-5">
@@ -25,8 +23,8 @@ export default function CarsPage() {
             id={car.carId}
             key={car.carId}
             location={[car.location.lat, car.location.lng]}
-            text={`${car.carName} ${time} ${
-              car.time2 <= time ? "(from mdy)" : "(to mdy)"
+            text={`${car.carName} ${mmHour} ${mmMinute} ${
+              car.time2 <= mmHour ? "(from mdy)" : "(to mdy)"
             }`}
           />
         ))}

@@ -1,12 +1,12 @@
+export const revalidate = 0;
+
 import Link from "next/link";
 import data from "../../../data/data.json";
 import RouteButton from "@/components/route-button";
-import { getClientDate } from "@/components/utils";
+import { getClientTime } from "@/components/utils";
 
 export default function GatesPage() {
-  // const time = new Date().getHours();
-  const time = getClientDate();
-  // console.log("time >>>", time);
+  const [mmHour, mmMinute] = getClientTime();
 
   return (
     <div className="py-5">
@@ -26,8 +26,8 @@ export default function GatesPage() {
             id={gate.gateId}
             key={gate.gateId}
             location={[gate.location.lat, gate.location.lng]}
-            text={`${gate.gateName} ${time} (${
-              gate.gateOpenTime <= time && gate.gateCloseTime > time
+            text={`${gate.gateName} ${mmHour} ${mmMinute} (${
+              gate.gateOpenTime <= mmHour && gate.gateCloseTime > mmHour
                 ? "open"
                 : "close"
             })`}
