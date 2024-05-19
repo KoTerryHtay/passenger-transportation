@@ -4,7 +4,8 @@ import data from "../../../data/data.json";
 import RouteButton from "@/components/route-button";
 import { getClientTime } from "@/utils";
 import RouteBack from "@/components/route-back";
-import ShowTime from "@/components/show-time";
+
+import ShowClientTime from "@/components/show-client-time";
 
 export default function GatesPage() {
   const [mmHour] = getClientTime();
@@ -14,7 +15,8 @@ export default function GatesPage() {
       <div className="flex items-center">
         <RouteBack />
         <div className="text-white ml-5 font-bold">Gates Page</div>
-        <ShowTime />
+        {/* <ShowTime /> */}
+        <ShowClientTime />
       </div>
       <div className="flex flex-col gap-5 font-bold text-white items-center  my-4">
         {data.Gates.map((gate) => (
