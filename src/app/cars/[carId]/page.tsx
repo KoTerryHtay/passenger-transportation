@@ -2,14 +2,16 @@ import { notFound } from "next/navigation";
 import data from "../../../../data/data.json";
 import Link from "next/link";
 import RouteButton from "@/components/route-button";
-import { getClientTime } from "@/components/utils";
+import { getClientTime } from "@/utils";
+import RouteBack from "@/components/route-back";
+import ShowTime from "@/components/show-time";
 
 type Params = {
   carId: string;
 };
 
 export default function CarDetailPage({ params }: { params: Params }) {
-  const [mmHour, mmMinute] = getClientTime();
+  const [mmHour] = getClientTime();
 
   const car = data.Cars.find((cars) => cars?.carId === params.carId);
 
@@ -22,15 +24,11 @@ export default function CarDetailPage({ params }: { params: Params }) {
   return (
     <div className="p-5">
       <div className="flex items-center gap-5 pb-5">
-        <Link
-          href={"/cars"}
-          className="text-white font-semibold hover:underline"
-        >
-          Back
-        </Link>
+        <RouteBack />
         <div className="text-center text-white font-semibold">
           Car Detail Page
         </div>
+        <ShowTime />
       </div>
       <div className="text-left text-white font-semibold space-y-3">
         <div>
@@ -57,7 +55,7 @@ export default function CarDetailPage({ params }: { params: Params }) {
               id={gate.gateId}
               location={[gate.location.lat, gate.location.lng]}
               option="gates"
-              text={`${gate.gateName} ${mmHour} ${mmMinute} (${
+              text={`${gate.gateName} (${
                 gate.gateOpenTime <= mmHour && gate.gateCloseTime > mmHour
                   ? "open"
                   : "close"

@@ -2,7 +2,9 @@ import { notFound } from "next/navigation";
 import data from "../../../../data/data.json";
 import Link from "next/link";
 import RouteButton from "@/components/route-button";
-import { getClientTime } from "@/components/utils";
+import { getClientTime } from "@/utils";
+import RouteBack from "@/components/route-back";
+import ShowTime from "@/components/show-time";
 
 type Params = {
   gateId: string;
@@ -22,15 +24,11 @@ export default function GateDetailPage({ params }: { params: Params }) {
   return (
     <div className="p-5">
       <div className="flex items-center gap-5 pb-5">
-        <Link
-          href={"/gates"}
-          className="text-white font-semibold hover:underline"
-        >
-          Back
-        </Link>
+        <RouteBack />
         <div className="text-center text-white font-semibold">
           Gate Detail Page
         </div>
+        <ShowTime />
       </div>
       <div className="text-left text-white font-semibold space-y-3">
         <div>
@@ -59,7 +57,7 @@ export default function GateDetailPage({ params }: { params: Params }) {
               id={car.carId}
               location={[car.location.lat, car.location.lng]}
               option="cars"
-              text={`${car.carName} ${mmHour} ${mmMinute} ${
+              text={`${car.carName} ${
                 car.time2 <= mmHour ? "(from mdy)" : "(to mdy)"
               }`}
             />

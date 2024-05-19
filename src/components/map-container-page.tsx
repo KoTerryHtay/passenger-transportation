@@ -6,9 +6,9 @@ import data from "../../data/data.json";
 import { LatLngExpression } from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import { useSearchParams } from "next/navigation";
-import { carSvgIcon, StopSvgIcon } from "./svg";
+import { carSvgIcon, StopSvgIcon } from "../utils/svg";
 
-export default function MapContainerPage() {
+export default function MapContainerPage({ height }: { height: string }) {
   const time = new Date().getHours();
   const searchParams = useSearchParams();
 
@@ -25,7 +25,8 @@ export default function MapContainerPage() {
     <div className="relative z-0">
       <MapContainer
         style={{
-          height: "100vh",
+          height: `${height}`,
+          // height: "100vh",
         }}
         center={
           !!hasSearchLatLng

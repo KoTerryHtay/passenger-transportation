@@ -7,5 +7,14 @@ export default function MapInfo() {
     loading: () => <p>loading...</p>,
     ssr: false,
   });
-  return <MapPage />;
+  return (
+    <>
+      <div className="hidden md:block">
+        <MapPage height="100vh" />
+      </div>
+      <div className="block md:hidden">
+        <MapPage height="36vh" />
+      </div>
+    </>
+  );
 }

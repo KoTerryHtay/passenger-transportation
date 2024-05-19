@@ -4,6 +4,7 @@ import "./globals.css";
 import Providers from "./providers";
 import Header from "@/components/header";
 import MapInfo from "@/components/map-info";
+import { Analytics } from "@vercel/analytics/react";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -24,14 +25,17 @@ export default function RootLayout({
         <Providers>
           <div className="flex flex-col bg[#1B4242] h-screen">
             <Header />
-            <div className="grid grid-cols-5 h-screen">
-              <div className="col-span-2 bg-[#5C8374]">{children}</div>
-              <div className="col-span-3">
+            <div className="grid grid-rows-5 md:grid-cols-5 h-screen">
+              <div className="row-span-3 md:col-span-2 md:h-screen bg-[#5C8374]">
+                {children}
+              </div>
+              <div className="row-span-2 md:col-span-3">
                 <MapInfo />
               </div>
             </div>
           </div>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
